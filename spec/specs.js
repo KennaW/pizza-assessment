@@ -7,4 +7,13 @@ describe("pizzaProcessor", function() {
             expect(plain).to.equal(5);
         });
     });
+
+    describe("cost of pepperoni", function() {
+        it("show cost of pepperoni pizza", function() {
+          var cost = Object.create(pizzaProcessor);
+          cost.pepperoni();
+          expect(cost.pizza).to.equal(10);
+        });
+    });
+
   });
