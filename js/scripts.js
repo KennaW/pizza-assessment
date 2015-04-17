@@ -6,21 +6,27 @@ var pizzaProcessor = {
   }
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
 
   $("form#pizzaSelect").submit(function(event) {
   event.preventDefault();
 
-  var topping = $("select#toppings").val();
-  var order = Object.Create(pizzaProcessor);
+  var toppingInput = $("select#toppings").val();
+  var order = Object.create(pizzaProcessor);
+  var topping = "";
 
-    if (topping==="cheese") {
-      return order.pizza;
-    }
-    elseif(topping==="pepperoni"){
-      order.pepperoni();
-      return order.pizza;
-    }
+
+
+
+  if (toppingInput ==="cheese") {
+          topping = order.pizza;
+          }
+          else if(toppingInput==="pepperoni"){
+            order.pepperoni();
+            topping = order.pizza;
+          }
+
+  $("span#price").text(topping);
 
   });
 });
